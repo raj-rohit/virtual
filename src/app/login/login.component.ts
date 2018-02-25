@@ -30,7 +30,9 @@ export class LoginComponent  {
   }
 
   }
-
-//////Set
+onRoast(){
+  console.log("I am atrocious");
+  this._router.navigate(['/newuser']);
+}
 
 }
