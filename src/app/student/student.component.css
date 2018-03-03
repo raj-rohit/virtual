@@ -11,9 +11,36 @@ h2{ font-size: 1.5em; }
 a{
 	color: rgb(241, 14, 82);
 	text-decoration: mediumorchid;
+	float:left;
+    position:relative;
+ 
+    border-right:1px solid #d8d8d8;
+	border-left:1px solid #ffffff;
+	font-family:'Times New Roman', Helvetica, sans-serif;
+    font-size:1.00em;
+    font-weight:bold;
+    color:#666666;
+    text-shadow:0px 1px 0px #ffffff;
+ 
+    display: block;
+    padding:0 1em;
+    line-height:2.5em;
 }
 	a:hover,
-	a:active{ text-decoration: underline; }
+	a:active{ text-decoration: underline; }#notificationbar {
+		background-color: red;
+		float:left;
+		position:relative;
+	 
+		border-right:1px solid #d8d8d8;
+		border-left:1px solid #ffffff;
+	}
+	
+	#notificationbar p {
+		color: white;
+	}
+	
+
 
 /* you can structure your code's white space so that it is as readable for when you come back in the future or for other people to read and edit quickly */
 
@@ -26,14 +53,14 @@ body{
 
 /* or on different lines like below */
 #logo{
-	width: 35%;
+	width: 80%;
 	margin-top: 5px;
 	font-family: georgia;
 	display: inline-block;
 }
 /* but try and be as concise as possible */
 #nav{
-	width: 60%;
+	width: 180%;
 	display: inline-block;
 	text-align: right;
 	float: right;
