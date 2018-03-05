@@ -15,7 +15,8 @@
 <body>
 
 <!-- webpage content goes here in the body -->
-
+	
+		
 	<div id="page">
 		<div id="logo">
 			<h1><a>Dashboard</a></h1>
@@ -32,11 +33,24 @@
                 <li><a>Course wise syllabus</a></li>
                 <li><a>Videos</a></li>
 			</ul>
-		
-								
+			<form>
+					  <div>
+						<label for="appt-time">Choose an appointment time (opening hours 12:00 to 18:00): </label>
+						<input id="appt-time" type="time" name="appt-time"
+						       min="12:00" max="18:00" required>
+						<span class="validity"></span>
+					  </div>
+					  <div>
+					      <input type="submit" value="Submit">
+					  </div>
+					</form>
+					
+							
+					
 								
 				  
 		</div>
+		
 		<div id="content">
 			<h2>Home</h2>
 			<p>
@@ -54,3 +68,6 @@
 	</div>
 </body>
 </html>
+
+		
+		

@@ -7,6 +7,10 @@ h3{
     text-align: center; 
     text-decoration: underline
   }
+  body{
+    font-family: arial; font-size: 80%; line-height: 1.2em; width: 100%; margin: 0; background: #eee;
+    background-image: url("http://www.wrbh.org/wp-content/uploads/2015/06/Books2.jpg");
+  }
   
   table{
     font-family: Calibri; 

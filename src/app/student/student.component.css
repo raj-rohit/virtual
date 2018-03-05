@@ -27,21 +27,8 @@ a{
     line-height:2.5em;
 }
 	a:hover,
-	a:active{ text-decoration: underline; }#notificationbar {
-		background-color: red;
-		float:left;
-		position:relative;
-	 
-		border-right:1px solid #d8d8d8;
-		border-left:1px solid #ffffff;
-	}
+	a:active{ text-decoration: underline; }
 	
-	#notificationbar p {
-		color: white;
-	}
-	
-
-
 /* you can structure your code's white space so that it is as readable for when you come back in the future or for other people to read and edit quickly */
 
 body{
@@ -58,15 +45,17 @@ body{
 	font-family: georgia;
 	display: inline-block;
 }
+
 /* but try and be as concise as possible */
 #nav{
 	width: 180%;
 	display: inline-block;
 	text-align: right;
-	float: right;
+	float:right;
 }
 	#nav ul{}
-		#nav ul li{
+	#nav ul li{
+
 			display: inline-block;
 			height: 62px;
 		}
