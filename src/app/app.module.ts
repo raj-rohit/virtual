@@ -5,6 +5,9 @@ import { FormsModule } from '@angular/forms';
 import {AngularFireModule} from 'angularfire2';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
 import {environment} from '../environments/environment';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatButtonModule, MatCheckboxModule} from '@angular/material';
+import {MatTabsModule} from '@angular/material/tabs'
 
 import { AppComponent } from './app.component';
 import { TeacherComponent } from './teacher/teacher.component';
@@ -17,6 +20,7 @@ import { ListUploadComponent } from './upload/list-upload/list-upload.component'
 import { DetailsUploadComponent } from './upload/details-upload/details-upload.component';
 import { componentFactoryName } from '@angular/compiler';
 import { UploadFileService } from './upload/upload-file.service';
+import { DataStoreComponent } from './data-store/data-store.component';
  
 
 const appRoutes: Routes = [
@@ -40,7 +44,8 @@ const appRoutes: Routes = [
     NewuserComponent,
     FormUploadComponent,
     ListUploadComponent,
-    DetailsUploadComponent
+    DetailsUploadComponent,
+    DataStoreComponent
   ],
   imports: [
     BrowserModule,
@@ -51,6 +56,10 @@ const appRoutes: Routes = [
     ),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule, // for database
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatTabsModule
   ],
   providers: [UploadFileService],
   bootstrap: [AppComponent]

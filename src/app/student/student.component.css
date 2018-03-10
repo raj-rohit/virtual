@@ -1,4 +1,18 @@
 
+
+	.btn-danger{
+		display: none !important;
+	}
+
+	.mat-tab-labels{
+		background-color: #00000091
+	}
+
+	.testme{
+opacity :1;
+background-color: #00000091
+	}
+
 p{ line-height: 1em; }
 h1, h2, h3, h4{
     color: rgb(79, 9, 207);
@@ -31,7 +45,7 @@ a{
 	
 /* you can structure your code's white space so that it is as readable for when you come back in the future or for other people to read and edit quickly */
 
-body{
+page{
 	font-family: arial; font-size: 80%; line-height: 1.2em; width: 100%; margin: 0; background: #eee;
 	background-image: url("http://www.wrbh.org/wp-content/uploads/2015/06/Books2.jpg");
 }

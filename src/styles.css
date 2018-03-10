@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.mat-tab-labels{
+    background-color: #00000091;
+   
+}
+
+.mat-tab-label{
+    color:white;
+    opacity:1 !important
+}
+
+body{background-image: url("http://www.wrbh.org/wp-content/uploads/2015/06/Books2.jpg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+}

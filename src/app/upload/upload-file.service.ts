@@ -7,7 +7,8 @@ import { FileUpload } from './fileupload';
 @Injectable()
 export class UploadFileService {
  
-  private basePath = '/uploads';
+  private basePath = '/uploads-quiz';
+  
  
   constructor(private db: AngularFireDatabase) { }
  
@@ -39,6 +40,11 @@ export class UploadFileService {
   }
  
   getFileUploads(numberItems): AngularFireList<FileUpload> {
+    return this.db.list(this.basePath, ref =>
+      ref.limitToLast(numberItems));
+  }
+
+  getFileUploadsQuiz(numberItems): AngularFireList<FileUpload> {
     return this.db.list(this.basePath, ref =>
       ref.limitToLast(numberItems));
   }
