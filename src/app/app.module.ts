@@ -15,6 +15,8 @@ import { NewuserComponent } from './newuser/newuser.component';
 import { FormUploadComponent } from './upload/form-upload/form-upload.component';
 import { ListUploadComponent } from './upload/list-upload/list-upload.component';
 import { DetailsUploadComponent } from './upload/details-upload/details-upload.component';
+import { componentFactoryName } from '@angular/compiler';
+import { UploadFileService } from './upload/upload-file.service';
  
 
 const appRoutes: Routes = [
@@ -23,6 +25,7 @@ const appRoutes: Routes = [
   { path: 'admin', component: AdminComponent },
   { path: 'newuser', component: NewuserComponent},
   { path: '', component: LoginComponent }
+
   
   
 ];
@@ -34,7 +37,7 @@ const appRoutes: Routes = [
     StudentComponent,
     AdminComponent,
     LoginComponent,
-    NewuserComponent
+    NewuserComponent,
     FormUploadComponent,
     ListUploadComponent,
     DetailsUploadComponent
@@ -49,7 +52,7 @@ const appRoutes: Routes = [
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule, // for database
   ],
-  providers: [],
+  providers: [UploadFileService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
