@@ -12,6 +12,10 @@ import { StudentComponent } from './student/student.component';
 import { AdminComponent } from './admin/admin.component';
 import { LoginComponent } from './login/login.component';
 import { NewuserComponent } from './newuser/newuser.component';
+import { FormUploadComponent } from './upload/form-upload/form-upload.component';
+import { ListUploadComponent } from './upload/list-upload/list-upload.component';
+import { DetailsUploadComponent } from './upload/details-upload/details-upload.component';
+ 
 
 const appRoutes: Routes = [
   { path: 'stud', component: StudentComponent },
@@ -31,6 +35,9 @@ const appRoutes: Routes = [
     AdminComponent,
     LoginComponent,
     NewuserComponent
+    FormUploadComponent,
+    ListUploadComponent,
+    DetailsUploadComponent
   ],
   imports: [
     BrowserModule,
