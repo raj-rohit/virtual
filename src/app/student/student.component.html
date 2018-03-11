@@ -33,9 +33,14 @@
 		 <mat-tab-group class="student-tab">
 			<mat-tab label="Latest Uploads">
 					<list-upload ></list-upload>
+					<list-upload-mock ></list-upload-mock>
 			</mat-tab>
-			<mat-tab label="Quiz papers"></mat-tab>
-			<mat-tab label="Mock papers"></mat-tab>
+			<mat-tab label="Quiz papers">
+				<list-upload ></list-upload>
+			</mat-tab>
+			<mat-tab label="Mock papers">
+				<list-upload-mock ></list-upload-mock>
+			</mat-tab>
 			<mat-tab label="Courses"></mat-tab>
 			<mat-tab label="Course wise syllabus"></mat-tab>
 			<mat-tab label="Videos">
@@ -49,7 +54,7 @@
 					<div style="width: 300px;">
 						<form (ngSubmit)="onSubmit()">
 							<div class="form-group">
-								<label for="item">Chat</label> <input type="text"
+							 <input type="text"
 									class="form-control" placeholder="Enter message..." id="item"
 									required [(ngModel)]="itemValue" name="item">
 							</div>

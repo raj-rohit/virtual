@@ -18,8 +18,12 @@ import { NewuserComponent } from './newuser/newuser.component';
 import { FormUploadComponent } from './upload/form-upload/form-upload.component';
 import { ListUploadComponent } from './upload/list-upload/list-upload.component';
 import { DetailsUploadComponent } from './upload/details-upload/details-upload.component';
+import { FormUploadComponentMock } from './upload/form-upload/form-upload-mock.component';
+import { ListUploadComponentMock } from './upload/list-upload/list-upload-mock.component';
+import { DetailsUploadComponentMock } from './upload/details-upload/details-upload-mock.component';
 import { componentFactoryName } from '@angular/compiler';
 import { UploadFileService } from './upload/upload-file.service';
+import { UploadFileServiceMock } from './upload/upload-file-mock.service';
 import { DataStoreComponent } from './data-store/data-store.component';
  
 
@@ -45,7 +49,10 @@ const appRoutes: Routes = [
     FormUploadComponent,
     ListUploadComponent,
     DetailsUploadComponent,
-    DataStoreComponent
+    DataStoreComponent,
+    FormUploadComponentMock,
+    DetailsUploadComponentMock,
+    ListUploadComponentMock
   ],
   imports: [
     BrowserModule,
@@ -61,7 +68,7 @@ const appRoutes: Routes = [
     MatCheckboxModule,
     MatTabsModule
   ],
-  providers: [UploadFileService],
+  providers: [UploadFileService,UploadFileServiceMock],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

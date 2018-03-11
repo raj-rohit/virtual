@@ -1,4 +1,4 @@
-             
+<!--              
         <div id="page">
             <div id="logo">
                 <h1><a>Dashboard</a></h1>
@@ -19,7 +19,7 @@
                 
                 
                   
-                <form-upload></form-upload>
+                <form-upload-mock></form-upload-mock>
                
                 <label for="myCOURSE">UPLOADS</label>
                 <input type="text" id="myCOURSE" name="COURSE" list="COURSELIST">
@@ -35,35 +35,67 @@
                   </select>
                 </datalist>
                 <button type="submit" form="nameform" value="Submit">Submit</button>
+             -->
 
-                    
-                
-                            
-            
+		
+	<div id="page">
+		<div id="logo">
+			<h1><a>Welcome Teacher</a></h1>
+		</div>
+		 <div >
 
-    
-              
-                      
-                                    
-                      
-            </div>
-            
-            <div id="content">
-                <h2>Home</h2>
-                <p>
-                    This is my first webpage! I was able to code all the HTML and CSS in order to make it. Watch out world of web design here I come!
-                </p>
-                <p> 
-                    I can use my skills here to create websites for my business, my friends and family, my C.V, blog or articles. As well as any games or more experiment stuff (which is what the web is really all about). 
-                </p>
-            </div>
-            <div id="footer">
-                <p>
-                    Webpage made by <a href="/" target="_blank">[your name]</a>
-                </p>
-            </div>
-        </div>
-   
-    
-            
-            
+		 <mat-tab-group class="student-tab">
+			<mat-tab label="Latest Uploads">
+					<list-upload ></list-upload>
+					<list-upload-mock ></list-upload-mock>
+			</mat-tab>
+			<mat-tab label="Quiz papers">
+                <form-upload></form-upload>
+				<list-upload ></list-upload>
+			</mat-tab>
+			<mat-tab label="Mock papers">
+                <form-upload-mock></form-upload-mock>
+				<list-upload-mock ></list-upload-mock>
+			</mat-tab>
+			<mat-tab label="Courses"></mat-tab>
+			<mat-tab label="Course wise syllabus"></mat-tab>
+			<mat-tab label="Videos">
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/UB1O30fR-EE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/yfoY53QXEnI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen> </iframe>
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/vEROU2XtPR8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+			</mat-tab>
+			<mat-tab label="Forum">
+				<div class="container-fluid">
+				
+					<div style="width: 300px;">
+						<form (ngSubmit)="onSubmit()">
+							<div class="form-group">
+							 <input type="text"
+									class="form-control" placeholder="Enter message..." id="item"
+									required [(ngModel)]="itemValue" name="item">
+							</div>
+				 
+							<div class="btn-group">
+								<button type="submit" class="btn btn-success">Submit</button>
+							</div>
+						</form>
+					</div>
+				 
+					<h2>Chat</h2>
+					<div class="col-md-3">
+						<pre *ngFor="let item of items | async">{{item.content}} </pre>
+					</div>
+				</div>
+			</mat-tab>
+		  </mat-tab-group>
+		</div>
+		<div id="footer">
+			
+		</div>
+	</div>
+
+
+
+
+		
+		
