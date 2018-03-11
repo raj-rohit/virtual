@@ -43,6 +43,29 @@
 				<iframe width="560" height="315" src="https://www.youtube.com/embed/yfoY53QXEnI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen> </iframe>
 				<iframe width="560" height="315" src="https://www.youtube.com/embed/vEROU2XtPR8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 			</mat-tab>
+			<mat-tab label="Forum">
+				<div class="container-fluid">
+				
+					<div style="width: 300px;">
+						<form (ngSubmit)="onSubmit()">
+							<div class="form-group">
+								<label for="item">Chat</label> <input type="text"
+									class="form-control" placeholder="Enter message..." id="item"
+									required [(ngModel)]="itemValue" name="item">
+							</div>
+				 
+							<div class="btn-group">
+								<button type="submit" class="btn btn-success">Submit</button>
+							</div>
+						</form>
+					</div>
+				 
+					<h2>Chat</h2>
+					<div class="col-md-3">
+						<pre *ngFor="let item of items | async">{{item.content}} </pre>
+					</div>
+				</div>
+			</mat-tab>
 		  </mat-tab-group>
 		</div>
 		<div id="footer">
