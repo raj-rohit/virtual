@@ -49,4 +49,9 @@ logout() {
     this._firebaseAuth.auth.signOut()
     .then((res) => this.router.navigate(['/']));
   }
+
+  signInRegular(email, password) {
+    const credential = firebase.auth.EmailAuthProvider.credential( email, password );
+    return this._firebaseAuth.auth.createUserWithEmailAndPassword(email, password)
+ }
 }

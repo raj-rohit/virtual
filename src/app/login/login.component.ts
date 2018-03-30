@@ -15,12 +15,17 @@ import { Observable } from 'rxjs/Observable';
   
 })
 export class LoginComponent  {
+
+  user1 = {
+    email: '',
+    password: ''
+ };
   private user: Observable<firebase.User>;
   private userDetails: firebase.User = null;
   username:string;password:string;
 
 
-  constructor(private _firebaseAuth: AngularFireAuth, private _router: Router) { 
+  constructor(private _firebaseAuth: AngularFireAuth, private _router: Router, private authService : AuthService) { 
     this.user = _firebaseAuth.authState;
 this.user.subscribe(
       (user) => {
@@ -39,6 +44,7 @@ this.user.subscribe(
     console.log("I am healthy");
     if(this.username=="admin" && this.password=="cleopatra")
     {
+      localStorage.setItem("lastname", "Smith")
     console.log("I am healthy");
      this._router.navigate(['/admin']); 
   }
@@ -49,6 +55,7 @@ this.user.subscribe(
   }
   else if(this.username=='teacher' && this.password=="monopoly")
   {
+    localStorage.setItem("lastname", "Smith")
     console.log("I am healthy");
      this._router.navigate(['/teach']); 
   }
@@ -64,10 +71,20 @@ signInWithGoogle() {
     new firebase.auth.GoogleAuthProvider()
   ).then((res) => {
    // alert(res.user.ca);
-  console.log(res.user.ca);
+  //console.log(res.user.ca);
   this._router.navigate(['/stud'])}
 );
 
+}
+
+signInWithEmail() {
+  this.authService.signInRegular(this.user1.email, this.user1.password)
+     .then((res) => {
+        console.log(res);
+  
+        this._router.navigate(['/stud']);
+     })
+     .catch((err) => console.log('error: ' + err));
 }
 
 }

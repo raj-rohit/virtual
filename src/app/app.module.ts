@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router'
+import { Routes, RouterModule, CanActivate } from '@angular/router'
 import { FormsModule } from '@angular/forms';
 import {AngularFireModule} from 'angularfire2';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
@@ -8,7 +8,8 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import {environment} from '../environments/environment';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatCheckboxModule} from '@angular/material';
-import {MatTabsModule} from '@angular/material/tabs'
+import {MatTabsModule} from '@angular/material/tabs';
+import { HttpClientModule } from '@angular/common/http'; import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { TeacherComponent } from './teacher/teacher.component';
@@ -27,10 +28,11 @@ import { UploadFileService } from './upload/upload-file.service';
 import { UploadFileServiceMock } from './upload/upload-file-mock.service';
 import { DataStoreComponent } from './data-store/data-store.component';
 import { AuthService } from './services/auth.service';
+import { AuthGuard } from './services/auth-guard.service';
  
 
 const appRoutes: Routes = [
-  { path: 'stud', component: StudentComponent },
+  { path: 'stud', component: StudentComponent , canActivate: [AuthGuard] },
   { path: 'teach', component: TeacherComponent },
   { path: 'admin', component: AdminComponent },
   { path: 'newuser', component: NewuserComponent},
@@ -72,7 +74,7 @@ const appRoutes: Routes = [
     MatTabsModule,
     AngularFireAuthModule
   ],
-  providers: [UploadFileService,UploadFileServiceMock,AuthService],
+  providers: [UploadFileService,UploadFileServiceMock,AuthService,AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
