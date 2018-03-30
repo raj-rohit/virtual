@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router'
 import { FormsModule } from '@angular/forms';
 import {AngularFireModule} from 'angularfire2';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 import {environment} from '../environments/environment';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatCheckboxModule} from '@angular/material';
@@ -25,6 +26,7 @@ import { componentFactoryName } from '@angular/compiler';
 import { UploadFileService } from './upload/upload-file.service';
 import { UploadFileServiceMock } from './upload/upload-file-mock.service';
 import { DataStoreComponent } from './data-store/data-store.component';
+import { AuthService } from './services/auth.service';
  
 
 const appRoutes: Routes = [
@@ -52,7 +54,8 @@ const appRoutes: Routes = [
     DataStoreComponent,
     FormUploadComponentMock,
     DetailsUploadComponentMock,
-    ListUploadComponentMock
+    ListUploadComponentMock,
+    
   ],
   imports: [
     BrowserModule,
@@ -66,9 +69,10 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     MatButtonModule,
     MatCheckboxModule,
-    MatTabsModule
+    MatTabsModule,
+    AngularFireAuthModule
   ],
-  providers: [UploadFileService,UploadFileServiceMock],
+  providers: [UploadFileService,UploadFileServiceMock,AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

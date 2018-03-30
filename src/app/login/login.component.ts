@@ -1,15 +1,39 @@
 import { Component, OnInit } from '@angular/core';
 import { Router }  from '@angular/router'; 
+import { AuthService } from '.././services/auth.service';
+
+import { Injectable } from '@angular/core';
+
+import { AngularFireAuth } from 'angularfire2/auth';
+import * as firebase from 'firebase/app';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+  
 })
 export class LoginComponent  {
-
+  private user: Observable<firebase.User>;
+  private userDetails: firebase.User = null;
   username:string;password:string;
-  constructor(private _router: Router){} 
+
+
+  constructor(private _firebaseAuth: AngularFireAuth, private _router: Router) { 
+    this.user = _firebaseAuth.authState;
+this.user.subscribe(
+      (user) => {
+        if (user) {
+          this.userDetails = user;
+          console.log(this.userDetails);
+        }
+        else {
+          this.userDetails = null;
+        }
+      }
+    );
+}
 
   onSubmit(){ 
     console.log("I am healthy");
@@ -33,6 +57,17 @@ export class LoginComponent  {
 onRoast(){
   console.log("I am atrocious");
   this._router.navigate(['/newuser']);
+}
+
+signInWithGoogle() {
+  return this._firebaseAuth.auth.signInWithPopup(
+    new firebase.auth.GoogleAuthProvider()
+  ).then((res) => {
+   // alert(res.user.ca);
+  console.log(res.user.ca);
+  this._router.navigate(['/stud'])}
+);
+
 }
 
 }

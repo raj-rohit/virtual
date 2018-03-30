@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<!-- <div class="container-fluid">
 	<div style="color: blue;">
 		<h1>{{title}}</h1>
 		<h3>{{description}}</h3>
@@ -22,4 +22,98 @@
 	<div class="col-md-3">
 		<pre *ngFor="let item of items | async">{{item.content}} </pre>
 	</div>
-</div>
+</div> -->
+
+
+		
+<div id="page">
+		<div id="logo">
+			<h1><a>Welcome Administrator</a></h1>
+		</div>
+		 <div >
+
+        <!--    <ul>
+			
+				<li><a href="#/home.html">Home</a></li>
+				<li><a>Latest Uploads</a></li>
+                <li><a>Quiz papers</a></li>
+                <li><a>Mock papers</a></li>
+				<li><a>Courses</a></li>
+                <li><a>Course wise syllabus</a></li>
+				<li><a>Videos</a></li>
+				<li><a>Faculty session appointments</a></li>
+				
+			</ul>
+			
+								
+				  
+		</div>
+		
+		<div id="content">
+			<h2>Home</h2>
+			<p>
+				<list-upload ></list-upload>
+			</p>
+		 -->
+
+		 <mat-tab-group class="student-tab">
+			<mat-tab label="Latest Uploads">
+					<list-upload ></list-upload>
+					<list-upload-mock ></list-upload-mock>
+			</mat-tab>
+			<!-- <mat-tab label="Quiz papers">
+				<list-upload ></list-upload>
+			</mat-tab> -->
+			<!-- <mat-tab label="Mock papers">
+				<list-upload-mock ></list-upload-mock>
+			</mat-tab> -->
+			<mat-tab label="Analytics">
+              <a  href="https://analytics.google.com/analytics/web/#embed/report-home/a116659777w173217963p172615529/" target="_blank">For analytics click here</a>
+
+			</mat-tab>
+			<mat-tab label="User List">
+					<a  href="https://console.firebase.google.com/project/virtual-00001/authentication/users" target="_blank">Students Enrolement List</a>
+					
+
+			</mat-tab>
+			<!-- <mat-tab label="Videos">
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/n7eja4DJPQ0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/UB1O30fR-EE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/yfoY53QXEnI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen> </iframe>
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/vEROU2XtPR8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+			</mat-tab> -->
+			<!-- <mat-tab label="Forum">
+				<div class="container-fluid">
+				
+					<div style="width: 300px;">
+						<form (ngSubmit)="onSubmit()">
+							<div class="form-group">
+							 <input type="text"
+									class="form-control" placeholder="Enter message..." id="item"
+									required [(ngModel)]="itemValue" name="item">
+							</div>
+				 
+							<div class="btn-group">
+								<button type="submit" class="btn btn-success">Submit</button>
+							</div>
+						</form>
+					</div>
+				 
+					<h2>Chat</h2>
+					<div class="col-md-3">
+						<pre *ngFor="let item of items | async">{{item.content}} </pre>
+					</div>
+				</div>
+			</mat-tab> -->
+		  </mat-tab-group>
+		</div>
+		<div id="footer">
+			
+		</div>
+	</div>
+
+
+
+
+		
+		
