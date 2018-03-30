@@ -1,25 +1,62 @@
-<div class="container-fluid">
-	<div style="color: blue;">
-		<h1>{{title}}</h1>
-		<h3>{{description}}</h3>
+<div id="page">
+	<div id="logo">
+		<h1><a>Welcome Admin</a></h1>
 	</div>
- 
-	<div style="width: 300px;">
-		<form (ngSubmit)="onSubmit()">
-			<div class="form-group">
-				<label for="item">Item</label> <input type="text"
-					class="form-control" placeholder="Enter content..." id="item"
-					required [(ngModel)]="itemValue" name="item">
+	
+	<mat-tab-group class="student-tab">
+		<mat-tab label="Latest Uploads">
+				<list-upload ></list-upload>
+		</mat-tab>
+		<mat-tab label="Create data">
+				<form-upload-mock></form-upload-mock>
+				<list-upload-mock ></list-upload-mock>
+		</mat-tab>
+		<mat-tab label="Forum">
+				<div class="container-fluid">
+						<div style="color: blue;">
+								<h1>{{title}}</h1>
+								<h3>{{description}}</h3>
+							
+		<div style="width: 300px;">
+				<form (ngSubmit)="onSubmit()">
+					<div class="form-group">
+						<label for="item">Forum</label> <input type="text"
+							class="form-control" placeholder="Enter content..." id="item"
+							required [(ngModel)]="itemValue" name="item">
+		
+					</div>
+		 
+					<div class="btn-group">
+						<button type="submit" class="btn btn-success">Submit</button>
+					</div>
+				</form>
 			</div>
- 
-			<div class="btn-group">
-				<button type="submit" class="btn btn-success">Submit</button>
+		 
+			<h2></h2>
+			<div class="col-md-3">
+				<pre *ngFor="let item of items | async">{{item.content}} </pre>
 			</div>
-		</form>
-	</div>
- 
-	<h2>Content from Firebase</h2>
-	<div class="col-md-3">
-		<pre *ngFor="let item of items | async">{{item.content}} </pre>
-	</div>
+			<h2>Chat</h2>
+					<div class="col-md-3">
+						<pre *ngFor="let item of items | async">{{item.content}} </pre>
+					</div>
+		</div>
+		</div>
+</mat-tab>
+</mat-tab-group>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 	
