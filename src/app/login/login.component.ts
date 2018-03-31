@@ -69,10 +69,7 @@ onRoast(){
 signInWithGoogle() {
   return this._firebaseAuth.auth.signInWithPopup(
     new firebase.auth.GoogleAuthProvider()
-  ).then((res) => {
-   // alert(res.user.ca);
-  //console.log(res.user.ca);
-  this._router.navigate(['/stud'])}
+  ).then((res) => this._router.navigate(['/stud'])
 );
 
 }
